@@ -1,0 +1,62 @@
+﻿@using ECommerceWeb.Common
+@using System.Threading.Tasks
+@page "/categorias/list"
+
+@inject ILogger<CategoriasListPage> Logger
+
+<h3>Lista de Categorias 3</h3>
+
+<div>
+    <button type="button" @onclick="MostrarLista" class="btn btn-primary mb-3">Mostrar Lista</button>
+</div>
+
+@if (MostrarDatos)
+{
+
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Descripción</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var categoria in Categorias)
+            {
+                <tr>
+                    <td>@categoria.Id</td>
+                    <td>@categoria.Nombre</td>
+                    <td>@categoria.Description</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    
+    
+}
+
+@code {
+    public ICollection<CategoriaDto> Categorias { get; set; } = new List<CategoriaDto>();
+    public bool MostrarDatos { get; set; } = true;
+
+    protected override async Task OnInitializedAsync()
+    {
+        // Simular la carga de datos
+        await Task.Delay(500);
+        Categorias = new List<CategoriaDto>
+        {
+        new CategoriaDto{Id=1,Nombre="Electrónica",Description="Dispositivos electrónicos y gadget."},
+        new CategoriaDto{Id=2, Nombre="Ropa",Description="Moda y Accesorios"},
+        new CategoriaDto{Id=3, Nombre="Hogar",Description="Artículos para el hogar y decoración"}
+        };
+    }
+
+    private void MostrarLista()
+    {
+        MostrarDatos = !MostrarDatos;
+        Logger.LogWarning("aiudaaaaa");
+    }
+
+}
