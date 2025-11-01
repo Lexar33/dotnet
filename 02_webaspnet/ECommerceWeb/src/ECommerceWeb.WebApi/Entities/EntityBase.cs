@@ -1,0 +1,9 @@
+using System;
+
+namespace ECommerceWeb.WebApi.Entities;
+
+public class EntityBase
+{
+    public int Id { get; set; }
+    
+}

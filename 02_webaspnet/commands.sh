@@ -14,3 +14,20 @@ dotnet new blazorwasm -o EcommerceWeb.WebApp
 #
 
 dotnet run #Folder WebApp
+
+
+#Añadir paquete
+dotnet add package Microsoft.EntityFrameworkCore.Design
+
+dotnet ef
+doetnet tool update dotnet-ef --global
+
+
+
+dotnet ef migrations add PrimeraMigracion
+
+
+######################
+docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=Pass@123" -p 1433:1433 --name SqlServerGalaxy -d mcr.microsoft.com/mssql/server:2022-latest
+docker exec -it SqlServerGalaxy bash
+# /opt/mssql-tools18/bin/sqlcmd -C -S localhost -U sa

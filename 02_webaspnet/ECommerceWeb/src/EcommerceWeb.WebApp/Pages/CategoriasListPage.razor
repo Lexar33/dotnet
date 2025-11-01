@@ -1,6 +1,8 @@
 ﻿@using ECommerceWeb.Common
 @using System.Threading.Tasks
+@using System.Net
 @page "/categorias/list"
+@inject HttpClient HttpClient
 
 @inject ILogger<CategoriasListPage> Logger
 
@@ -12,50 +14,56 @@
 
 @if (MostrarDatos)
 {
+    @if (Categorias.Count == 0)
+    {
+        <p class="alert alert-warning">No hay categorìas disponibles</p>
+    }
+    else
+    {
 
-
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Nombre</th>
-                <th>Descripción</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var categoria in Categorias)
-            {
+        <table class="table">
+            <thead>
                 <tr>
-                    <td>@categoria.Id</td>
-                    <td>@categoria.Nombre</td>
-                    <td>@categoria.Description</td>
+                    <th>Id</th>
+                    <th>Nombre</th>
+                    <th>Descripción</th>
                 </tr>
-            }
-        </tbody>
-    </table>
-    
-    
+            </thead>
+            <tbody>
+                @foreach (var categoria in Categorias)
+                {
+                    <tr>
+                        <td>@categoria.Id</td>
+                        <td>@categoria.Nombre</td>
+                        <td>@categoria.Descripcion</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
 }
 
 @code {
     public ICollection<CategoriaDto> Categorias { get; set; } = new List<CategoriaDto>();
     public bool MostrarDatos { get; set; } = true;
 
-    protected override async Task OnInitializedAsync()
+    protected async Task LoadData()
     {
-        // Simular la carga de datos
-        await Task.Delay(500);
-        Categorias = new List<CategoriaDto>
+        var response = await HttpClient.GetAsync("api/categorias");
+        if (response.IsSuccessStatusCode)
         {
-        new CategoriaDto{Id=1,Nombre="Electrónica",Description="Dispositivos electrónicos y gadget."},
-        new CategoriaDto{Id=2, Nombre="Ropa",Description="Moda y Accesorios"},
-        new CategoriaDto{Id=3, Nombre="Hogar",Description="Artículos para el hogar y decoración"}
-        };
+
+            Categorias = await response.Content.ReadFromJsonAsync<ICollection<CategoriaDto>>() ?? new List<CategoriaDto>();
+        }
     }
 
-    private void MostrarLista()
+    private async Task MostrarLista()
     {
         MostrarDatos = !MostrarDatos;
+        if (MostrarDatos)
+        {
+            await LoadData();
+        }
         Logger.LogWarning("aiudaaaaa");
     }
 
