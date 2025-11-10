@@ -1,0 +1,36 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Fundamentos", "Fundamentos", "{7BBA5BDD-93B3-1E55-8454-023C3E03EA36}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiApp", "Fundamentos\MiApp\MiApp.csproj", "{2D217DD0-0D2A-2888-F482-D8BB1B11717A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiAppMvc", "Fundamentos\MiAppMvc\MiAppMvc.csproj", "{0157729A-FCCD-DA3D-93A2-E26319FC4BA3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2D217DD0-0D2A-2888-F482-D8BB1B11717A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D217DD0-0D2A-2888-F482-D8BB1B11717A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D217DD0-0D2A-2888-F482-D8BB1B11717A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D217DD0-0D2A-2888-F482-D8BB1B11717A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0157729A-FCCD-DA3D-93A2-E26319FC4BA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0157729A-FCCD-DA3D-93A2-E26319FC4BA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0157729A-FCCD-DA3D-93A2-E26319FC4BA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0157729A-FCCD-DA3D-93A2-E26319FC4BA3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2D217DD0-0D2A-2888-F482-D8BB1B11717A} = {7BBA5BDD-93B3-1E55-8454-023C3E03EA36}
+		{0157729A-FCCD-DA3D-93A2-E26319FC4BA3} = {7BBA5BDD-93B3-1E55-8454-023C3E03EA36}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FC3A3A3F-3D0B-4BDE-878D-28FDCB3A6A06}
+	EndGlobalSection
+EndGlobal

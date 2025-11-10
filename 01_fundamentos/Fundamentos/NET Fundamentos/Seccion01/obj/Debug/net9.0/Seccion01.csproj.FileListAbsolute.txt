@@ -1,0 +1,15 @@
+C:\CODES\dotnet\Fundamentos\NET Fundamentos\Seccion01\bin\Debug\net9.0\Seccion01.exe
+C:\CODES\dotnet\Fundamentos\NET Fundamentos\Seccion01\bin\Debug\net9.0\Seccion01.deps.json
+C:\CODES\dotnet\Fundamentos\NET Fundamentos\Seccion01\bin\Debug\net9.0\Seccion01.runtimeconfig.json
+C:\CODES\dotnet\Fundamentos\NET Fundamentos\Seccion01\bin\Debug\net9.0\Seccion01.dll
+C:\CODES\dotnet\Fundamentos\NET Fundamentos\Seccion01\bin\Debug\net9.0\Seccion01.pdb
+C:\CODES\dotnet\Fundamentos\NET Fundamentos\Seccion01\obj\Debug\net9.0\Seccion01.GeneratedMSBuildEditorConfig.editorconfig
+C:\CODES\dotnet\Fundamentos\NET Fundamentos\Seccion01\obj\Debug\net9.0\Seccion01.AssemblyInfoInputs.cache
+C:\CODES\dotnet\Fundamentos\NET Fundamentos\Seccion01\obj\Debug\net9.0\Seccion01.AssemblyInfo.cs
+C:\CODES\dotnet\Fundamentos\NET Fundamentos\Seccion01\obj\Debug\net9.0\Seccion01.csproj.CoreCompileInputs.cache
+C:\CODES\dotnet\Fundamentos\NET Fundamentos\Seccion01\obj\Debug\net9.0\Seccion01.sourcelink.json
+C:\CODES\dotnet\Fundamentos\NET Fundamentos\Seccion01\obj\Debug\net9.0\Seccion01.dll
+C:\CODES\dotnet\Fundamentos\NET Fundamentos\Seccion01\obj\Debug\net9.0\refint\Seccion01.dll
+C:\CODES\dotnet\Fundamentos\NET Fundamentos\Seccion01\obj\Debug\net9.0\Seccion01.pdb
+C:\CODES\dotnet\Fundamentos\NET Fundamentos\Seccion01\obj\Debug\net9.0\Seccion01.genruntimeconfig.cache
+C:\CODES\dotnet\Fundamentos\NET Fundamentos\Seccion01\obj\Debug\net9.0\ref\Seccion01.dll
