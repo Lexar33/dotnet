@@ -1,5 +1,6 @@
 using ECommerceWeb.WebApi.DataAccess;
 using ECommerceWeb.WebApi.Entities;
+using ECommerceWeb.WebApi.Repositories.Interfaces;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -10,27 +11,26 @@ namespace ECommerceWeb.WebApi.Controllers
     [ApiController]
     public class CategoriasController : ControllerBase
     {
-        private readonly ECommerceDbContext _context;
+        private readonly ICategoriaRepository _repository;
 
-        public CategoriasController(ECommerceDbContext context)
+        public CategoriasController(ICategoriaRepository repository)
         {
-            _context = context;
+            _repository = repository;
         }
 
         [HttpGet]
         public async Task<IActionResult> GetCategorias()
         {
-            var categorias = await _context.Categorias.ToListAsync(); //select a tabla categorias
+            var categorias = await _repository.ListAsync(); //select a tabla categorias
             return Ok(categorias);
         }
 
         [HttpPost]
         public async Task<IActionResult> CreateCategoria([FromBody] Categoria categoria)
         {
-            _context.Categorias.Add(categoria); // INSERT INTO CATEGORIAS
-            await _context.SaveChangesAsync(); //confirma los datos en la DB
-            //return CreatedAtAction(nameof(GetCategorias), new { id = categoria.Id }, categoria);
-            return Ok();
+            await _repository.AddAsync(categoria);
+            return CreatedAtAction(nameof(GetCategorias), new { id = categoria.Id }, categoria);
+        
         }
 
     }
