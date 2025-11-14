@@ -10,5 +10,5 @@ public class ECommerceDbContext : DbContext
 
     }
 
-    public DbSet<Entities.Categoria> Categorias { get; set; } = null;
+    public DbSet<Entities.Categoria> Categorias { get; set; } = null!;
 }
