@@ -11,24 +11,24 @@ namespace ECommerceWeb.WebApi.Controllers
     [ApiController]
     public class CategoriasController : ControllerBase
     {
-        private readonly ICategoriaRepository _repository;
+        private readonly ICategoriaRepository _context;
 
-        public CategoriasController(ICategoriaRepository repository)
+        public CategoriasController(ICategoriaRepository context)
         {
-            _repository = repository;
+            _context = context;
         }
 
         [HttpGet]
         public async Task<IActionResult> GetCategorias()
         {
-            var categorias = await _repository.ListAsync(); //select a tabla categorias
+            var categorias = await _context.ListAsync(); //select a tabla categorias
             return Ok(categorias);
         }
 
         [HttpPost]
         public async Task<IActionResult> CreateCategoria([FromBody] Categoria categoria)
         {
-            await _repository.AddAsync(categoria);
+            await _context.AddAsync(categoria);
             return CreatedAtAction(nameof(GetCategorias), new { id = categoria.Id }, categoria);
         
         }
