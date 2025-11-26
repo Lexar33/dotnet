@@ -9,14 +9,15 @@
 <h3>Lista de Categorias 3</h3>
 
 <div>
-    <button type="button" @onclick="MostrarLista" class="btn btn-primary mb-3">Mostrar Lista</button>
+    <button type="button" @onclick="LoadData" class="btn btn-primary mb-3">Cargar Lista</button>
+    <a href="/categorias/new" class="btn btn-success mb-3">Nueva Categoria</a>
 </div>
 
 @if (MostrarDatos)
 {
     @if (Categorias.Count == 0)
     {
-        <p class="alert alert-warning">No hay categorìas disponibles</p>
+        <p class="alert alert-warning">No hay datos para mostrar.</p>
     }
     else
     {
@@ -52,19 +53,8 @@
         var response = await HttpClient.GetAsync("api/categorias");
         if (response.IsSuccessStatusCode)
         {
-
             Categorias = await response.Content.ReadFromJsonAsync<ICollection<CategoriaDto>>() ?? new List<CategoriaDto>();
         }
-    }
-
-    private async Task MostrarLista()
-    {
-        MostrarDatos = !MostrarDatos;
-        if (MostrarDatos)
-        {
-            await LoadData();
-        }
-        Logger.LogWarning("aiudaaaaa");
     }
 
 }

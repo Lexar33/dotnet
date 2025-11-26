@@ -21,19 +21,32 @@ namespace ECommerceWeb.WebApi.Controllers
         [HttpGet]
         public async Task<IActionResult> GetCategorias()
         {
-            var categorias = await _context.ListAsync(); //select a tabla categorias
-            return Ok(categorias);
+            try
+            {
+                var categorias = await _context.ListAsync(); //select a tabla categorias
+                return Ok(categorias);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { Message = "No se pudo listar los registros", Error = ex.Message });
+            }
         }
 
         [HttpPost]
         public async Task<IActionResult> CreateCategoria([FromBody] Categoria categoria)
         {
-            await _context.AddAsync(categoria);
-            return CreatedAtAction(nameof(GetCategorias), new { id = categoria.Id }, categoria);
-        
-        }
 
-        
+            try
+            {
+                await _context.AddAsync(categoria);
+                return CreatedAtAction(nameof(GetCategorias), new { id = categoria.Id }, categoria);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { Message = "No se pudo crear el registro", Error = ex.Message });
+            }
+
+        }
 
     }
 }
