@@ -1,16 +1,15 @@
 ﻿@using ECommerceWeb.Common
 @using System.Threading.Tasks
-@using System.Net
 @page "/categorias/list"
 @inject HttpClient HttpClient
 
 @inject ILogger<CategoriasListPage> Logger
 
-<h3>Lista de Categorias 3</h3>
+<h3 class="mb-3">Lista de Categorias 3</h3>
 
-<div>
-    <button type="button" @onclick="LoadData" class="btn btn-primary mb-3">Cargar Lista</button>
-    <a href="/categorias/new" class="btn btn-success mb-3">Nueva Categoria</a>
+<div class="mb-3">
+    <button type="button" @onclick="LoadData" class="btn btn-primary mb-3"><i class="bi bi-arrow-clockwise me-1"></i>Cargar Lista</button>
+    <a href="/categorias/new" class="btn btn-success mb-3"><i class="bi bi-plus-circle me-1"></i>Nueva Categoria</a>
 </div>
 
 @if (MostrarDatos)
@@ -22,12 +21,13 @@
     else
     {
 
-        <table class="table">
+        <table class="table table-hover table-stripped">
             <thead>
-                <tr>
+                <tr class="table-primary">
                     <th>Id</th>
                     <th>Nombre</th>
                     <th>Descripción</th>
+                    <th>Acciones</th>
                 </tr>
             </thead>
             <tbody>
@@ -37,6 +37,10 @@
                         <td>@categoria.Id</td>
                         <td>@categoria.Nombre</td>
                         <td>@categoria.Descripcion</td>
+                        <td>
+                            <a href="/categorias/edit/@categoria.Id" class="btn btn-warning btn-sm"><i class="bi bi-pencil"></i></a>
+                               <button class="btn btn-danger btn-sm" @onclick="() =>DeleteCategoria(categoria.Id)"><i class="bi bi-trash"></i></button>
+                        </td>
                     </tr>
                 }
             </tbody>
@@ -54,6 +58,15 @@
         if (response.IsSuccessStatusCode)
         {
             Categorias = await response.Content.ReadFromJsonAsync<ICollection<CategoriaDto>>() ?? new List<CategoriaDto>();
+        }
+    }
+
+    private async Task DeleteCategoria(int id)
+    {
+        var response = await HttpClient.DeleteAsync($"api/categorias/{id}");
+        if (response.IsSuccessStatusCode)
+        {
+            await LoadData();    
         }
     }
 

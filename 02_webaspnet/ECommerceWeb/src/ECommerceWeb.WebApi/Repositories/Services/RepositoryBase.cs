@@ -2,6 +2,7 @@ using System;
 using ECommerceWeb.WebApi.DataAccess;
 using ECommerceWeb.WebApi.Entities;
 using ECommerceWeb.WebApi.Repositories.Interfaces;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace ECommerceWeb.WebApi.Repositories.Services;
@@ -23,8 +24,28 @@ where TEntity : EntityBase
         return await _context.SaveChangesAsync(); // Confirma los datos en la db
     }
 
+    public async Task DeleteAsync(int id)
+    {
+        var entity= await _context.Set<TEntity>().FindAsync(id);
+        if (entity != null)
+        {   
+            _context.Set<TEntity>().Remove(entity);
+            await _context.SaveChangesAsync();
+        }
+    }
+
+    public async Task<TEntity?> GetByIdAsync(int id)
+    {
+        return await _context.Set<TEntity>().FindAsync(id);
+    }
+
     public async Task<ICollection<TEntity>> ListAsync()
     {
        return await _context.Set<TEntity>().ToListAsync();
+    }
+
+    public async Task UpdateAsync()
+    {
+        await _context.SaveChangesAsync();
     }
 }

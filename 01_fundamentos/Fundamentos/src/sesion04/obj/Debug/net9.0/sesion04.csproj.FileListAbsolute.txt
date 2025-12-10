@@ -1,0 +1,15 @@
+C:\CODES\dotnet\01_fundamentos\Fundamentos\src\sesion04\bin\Debug\net9.0\sesion04.exe
+C:\CODES\dotnet\01_fundamentos\Fundamentos\src\sesion04\bin\Debug\net9.0\sesion04.deps.json
+C:\CODES\dotnet\01_fundamentos\Fundamentos\src\sesion04\bin\Debug\net9.0\sesion04.runtimeconfig.json
+C:\CODES\dotnet\01_fundamentos\Fundamentos\src\sesion04\bin\Debug\net9.0\sesion04.dll
+C:\CODES\dotnet\01_fundamentos\Fundamentos\src\sesion04\bin\Debug\net9.0\sesion04.pdb
+C:\CODES\dotnet\01_fundamentos\Fundamentos\src\sesion04\obj\Debug\net9.0\sesion04.GeneratedMSBuildEditorConfig.editorconfig
+C:\CODES\dotnet\01_fundamentos\Fundamentos\src\sesion04\obj\Debug\net9.0\sesion04.AssemblyInfoInputs.cache
+C:\CODES\dotnet\01_fundamentos\Fundamentos\src\sesion04\obj\Debug\net9.0\sesion04.AssemblyInfo.cs
+C:\CODES\dotnet\01_fundamentos\Fundamentos\src\sesion04\obj\Debug\net9.0\sesion04.csproj.CoreCompileInputs.cache
+C:\CODES\dotnet\01_fundamentos\Fundamentos\src\sesion04\obj\Debug\net9.0\sesion04.sourcelink.json
+C:\CODES\dotnet\01_fundamentos\Fundamentos\src\sesion04\obj\Debug\net9.0\sesion04.dll
+C:\CODES\dotnet\01_fundamentos\Fundamentos\src\sesion04\obj\Debug\net9.0\refint\sesion04.dll
+C:\CODES\dotnet\01_fundamentos\Fundamentos\src\sesion04\obj\Debug\net9.0\sesion04.pdb
+C:\CODES\dotnet\01_fundamentos\Fundamentos\src\sesion04\obj\Debug\net9.0\sesion04.genruntimeconfig.cache
+C:\CODES\dotnet\01_fundamentos\Fundamentos\src\sesion04\obj\Debug\net9.0\ref\sesion04.dll

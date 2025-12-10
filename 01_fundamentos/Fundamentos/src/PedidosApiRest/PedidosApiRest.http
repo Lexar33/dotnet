@@ -1,0 +1,6 @@
+@PedidosApiRest_HostAddress = http://localhost:5000
+
+GET {{PedidosApiRest_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

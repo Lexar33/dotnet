@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "nfyV2lD1gZU=",
+  "success": true,
+  "projectFilePath": "C:\\CODES\\dotnet\\01_fundamentos\\Fundamentos\\src\\PedidosApiRest\\PedidosApiRest.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\jalcantarar\\.nuget\\packages\\microsoft.aspnetcore.openapi\\9.0.9\\microsoft.aspnetcore.openapi.9.0.9.nupkg.sha512",
+    "C:\\Users\\jalcantarar\\.nuget\\packages\\microsoft.openapi\\1.6.17\\microsoft.openapi.1.6.17.nupkg.sha512"
+  ],
+  "logs": []
+}
