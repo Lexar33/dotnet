@@ -10,9 +10,9 @@ namespace ECommerceWeb.WebApi.Repositories.Services;
 public abstract class RepositoryBase<TEntity> : IRepositoryBase<TEntity>
 where TEntity : EntityBase
 {
-    private readonly ECommerceDbContext _context;
+    protected readonly ECommerceDbContext _context;
 
-    public RepositoryBase(ECommerceDbContext context)
+    protected RepositoryBase(ECommerceDbContext context)
     {
         this._context = context;
     }

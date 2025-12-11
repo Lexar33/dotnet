@@ -27,6 +27,7 @@ dotnet ef
 ############################################
 
 dotnet ef migrations add PrimeraMigracion
+#dotnet ef migrations add ProductosMigration
 dotnet ef database update
 
 

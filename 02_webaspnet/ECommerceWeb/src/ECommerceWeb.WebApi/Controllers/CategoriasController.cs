@@ -1,115 +1,110 @@
-using ECommerceWeb.WebApi.DataAccess;
 using ECommerceWeb.WebApi.Entities;
 using ECommerceWeb.WebApi.Repositories.Interfaces;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
-namespace ECommerceWeb.WebApi.Controllers
+namespace ECommerceWeb.WebApi.Controllers;
+
+[Route("api/[controller]")]
+[ApiController]
+public class CategoriasController : ControllerBase
 {
-    [Route("api/[controller]")]
-    [ApiController]
-    public class CategoriasController : ControllerBase
+    private readonly ICategoriaRepository _repository;
+
+    public CategoriasController(ICategoriaRepository repository)
     {
-        private readonly ICategoriaRepository _repository;
+        _repository = repository;
+    }
 
-        public CategoriasController(ICategoriaRepository repository)
+    [HttpGet]
+    public async Task<IActionResult> GetCategorias()
+    {
+        try
         {
-            _repository = repository;
+            var categorias = await _repository.ListAsync(); //select a tabla categorias
+            return Ok(categorias);
+        }
+        catch (Exception ex)
+        {
+            return BadRequest(new { Message = "No se pudo listar los registros", Error = ex.Message });
+        }
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> CreateCategoria([FromBody] Categoria categoria)
+    {
+
+        try
+        {
+            await _repository.AddAsync(categoria);
+            return CreatedAtAction(nameof(GetCategorias), new { id = categoria.Id }, categoria);
+        }
+        catch (Exception ex)
+        {
+            return BadRequest(new { Message = "No se pudo crear el registro", Error = ex.Message });
         }
 
-        [HttpGet]
-        public async Task<IActionResult> GetCategorias()
+    }
+
+    [HttpGet("{id:int}")]
+    public async Task<IActionResult> GetCategoriaById(int id)
+    {
+        try
         {
-            try
-            {
-                var categorias = await _repository.ListAsync(); //select a tabla categorias
-                return Ok(categorias);
+            var categoria = await _repository.GetByIdAsync(id);
+            if (categoria == null) {
+                return NotFound();
             }
-            catch (Exception ex)
-            {
-                return BadRequest(new { Message = "No se pudo listar los registros", Error = ex.Message });
-            }
+            return Ok(categoria);
         }
-
-        [HttpPost]
-        public async Task<IActionResult> CreateCategoria([FromBody] Categoria categoria)
+        catch (Exception ex)
         {
-
-            try
-            {
-                await _repository.AddAsync(categoria);
-                return CreatedAtAction(nameof(GetCategorias), new { id = categoria.Id }, categoria);
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(new { Message = "No se pudo crear el registro", Error = ex.Message });
-            }
+            return BadRequest(new { Message = "No se pudo obtener el registro", Error = ex.Message });
 
         }
+    }
 
-        [HttpGet("{id:int}")]
-        public async Task<IActionResult> GetCategoriaById(int id)
+    [HttpPut("{id:int}")]
+    public async Task<IActionResult> UpdateCategoria(int id, [FromBody] Categoria categoria)
+    
+    {
+        try
         {
-            try
+            var existingCategoria = await _repository.GetByIdAsync(id);
+            if (existingCategoria == null)
             {
-                var categoria = await _repository.GetByIdAsync(id);
-                if (categoria == null) {
-                    return NotFound();
-                }
-                return Ok(categoria);
+                return NotFound();
             }
-            catch (Exception ex)
-            {
-                return BadRequest(new { Message = "No se pudo obtener el registro", Error = ex.Message });
+            existingCategoria.Nombre = categoria.Nombre;
+            existingCategoria.Descripcion = categoria.Descripcion;
+            await _repository.UpdateAsync();
+            return NoContent();
 
-            }
         }
-
-        [HttpPut("{id:int}")]
-        public async Task<IActionResult> UpdateCategoria(int id, [FromBody] Categoria categoria)
-        
+        catch (Exception ex)
         {
-            try
-            {
-                var existingCategoria = await _repository.GetByIdAsync(id);
-                if (existingCategoria == null)
-                {
-                    return NotFound();
-                }
-                existingCategoria.Nombre = categoria.Nombre;
-                existingCategoria.Descripcion = categoria.Descripcion;
-                await _repository.UpdateAsync();
-                return NoContent();
+            return BadRequest(new { Message = "No se pudo actualizar el registro", Error = ex.Message });
 
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(new { Message = "No se pudo actualizar el registro", Error = ex.Message });
-
-            }
         }
+    }
 
 
-        [HttpDelete("{id:int}")]
-        public async Task<IActionResult> DeleteCategoria(int id)
+    [HttpDelete("{id:int}")]
+    public async Task<IActionResult> DeleteCategoria(int id)
+    {
+        try
         {
-            try
+            var existingCategoria = await _repository.GetByIdAsync(id);
+            if (existingCategoria == null)
             {
-                var existingCategoria = await _repository.GetByIdAsync(id);
-                if (existingCategoria == null)
-                {
-                    return NotFound();
-                }
+                return NotFound();
+            }
 
-                await _repository.DeleteAsync(id);
-                return NoContent();
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(new { Message = "No se pudo eliminar el registro", Error = ex.Message });
-            }
+            await _repository.DeleteAsync(id);
+            return NoContent();
+        }
+        catch (Exception ex)
+        {
+            return BadRequest(new { Message = "No se pudo eliminar el registro", Error = ex.Message });
         }
     }
 }
