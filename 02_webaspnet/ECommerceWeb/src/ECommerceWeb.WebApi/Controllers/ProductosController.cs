@@ -9,7 +9,6 @@ namespace ECommerceWeb.WebApi.Controllers;
 [ApiController]
 public class ProductosController : ControllerBase
 {
-
     private readonly IProductoRepository _repository;
 
     public ProductosController(IProductoRepository repository)
