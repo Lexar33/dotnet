@@ -6,6 +6,9 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PortalGalaxy.ApiRest", "src\PortalGalaxy.ApiRest\PortalGalaxy.ApiRest.csproj", "{BCCBBBDA-69B9-265E-1097-3B598CD003B0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PortalGalaxy.DataAccess", "src\PortalGalaxy.DataAccess\PortalGalaxy.DataAccess.csproj", "{541ED317-6843-D703-65F4-E7AEE7A40BA5}"
+	ProjectSection(ProjectDependencies) = postProject
+		{8BFECAC3-E49A-164D-754D-318CE353E514} = {8BFECAC3-E49A-164D-754D-318CE353E514}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PortalGalaxy.Entities", "src\PortalGalaxy.Entities\PortalGalaxy.Entities.csproj", "{EE3D5C8C-8B61-702A-F6CD-51F209EF432C}"
 EndProject
