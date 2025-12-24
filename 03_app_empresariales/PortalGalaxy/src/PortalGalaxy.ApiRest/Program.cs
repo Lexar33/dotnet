@@ -1,8 +1,18 @@
+using Microsoft.EntityFrameworkCore;
+using PortalGalaxy.DataAccess;
+using PortalGalaxy.Entities;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
+
+builder.Services.AddDbContext<PortalGalaxyDbContext>(options =>
+{
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
+
+});
 
 var app = builder.Build();
 
@@ -14,28 +24,34 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-var summaries = new[]
-{
-    "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-};
 
-app.MapGet("/weatherforecast", () =>
+app.MapGet("/api/categorias", (PortalGalaxyDbContext context) =>
 {
-    var forecast =  Enumerable.Range(1, 5).Select(index =>
-        new WeatherForecast
-        (
-            DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-            Random.Shared.Next(-20, 55),
-            summaries[Random.Shared.Next(summaries.Length)]
-        ))
-        .ToArray();
-    return forecast;
-})
-.WithName("GetWeatherForecast");
+    var categorias = context.Set<Categoria>().ToList();
+    return Results.Ok(categorias);
+});
+
+app.MapGet("/api/categoriassl", (PortalGalaxyDbContext context) =>
+{
+    var connection = context.Database.GetDbConnection();
+    connection.Open();
+    using (var command = connection.CreateCommand())
+    {
+        command.CommandText = "SELECT * FROM Categoria";
+        var reader = command.ExecuteReader();
+        var categorias = new List<Categoria>();
+        while (reader.Read())
+        {
+            categorias.Add(new Categoria
+            {
+                Id = reader.GetInt32(0),
+                Nombre = reader.GetString(1)
+            });
+            reader.Close();
+            connection.Close();
+        }
+    }
+});
 
 app.Run();
 
-record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
-{
-    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
-}

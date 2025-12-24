@@ -14,6 +14,10 @@ namespace PortalGalaxy.DataAccess.Configurations
         public void Configure(EntityTypeBuilder<Alumno> builder)
         {
             builder.ToTable(nameof(Alumno));
+
+            builder.Property(p => p.NroDocumento)
+                .HasMaxLength(20);
+
         }
 
     }

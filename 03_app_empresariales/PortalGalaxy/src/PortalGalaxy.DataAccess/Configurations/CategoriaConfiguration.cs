@@ -16,7 +16,7 @@ namespace PortalGalaxy.DataAccess.Configurations
             {
                 new() { Id=1,Nombre =".NET", FechaCreacion = Constantes.FechaCreacionDefault},
                 new() { Id=2,Nombre ="Java", FechaCreacion = Constantes.FechaCreacionDefault},
-                new() { Id=3,Nombre ="Python", FechaCreacion = Constantes.FechaCreacionDefault}
+                new() { Id=3,Nombre ="Python", FechaCreacion = Constantes.FechaCreacionDefault},
                 new() { Id=4,Nombre ="Javascript", FechaCreacion = Constantes.FechaCreacionDefault},
                 new() { Id=5,Nombre ="AWS", FechaCreacion = Constantes.FechaCreacionDefault},
                 new() { Id=6,Nombre ="Azure", FechaCreacion = Constantes.FechaCreacionDefault}

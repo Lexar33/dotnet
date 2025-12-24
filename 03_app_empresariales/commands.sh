@@ -11,3 +11,10 @@ dotnet new classlib -o PortalGalaxy.Repositories
 dotnet new classlib -o PortalGalaxy.Dto
 dotnet new classlib -o PortalGalaxy.Common
 dotnet new xunit -o PortalGalaxy.UnitTests
+#Migracion
+dotnet dotnet-ef migrations add InitialMigration --project src/PortalGalaxy.DataAccess/PortalGalaxy.DataAccess.csproj --startup-project src/PortalGalaxy.ApiRest/PortalGalaxy.ApiRest.csproj 
+dotnet ef database update --project src/PortalGalaxy.DataAccess/PortalGalaxy.DataAccess.csproj --startup-project src/PortalGalaxy.ApiRest/PortalGalaxy.ApiRest.csproj 
+
+#Manifiesto #paquetes locales
+dotnet new tool-manifest
+dotnet tool install dotnet-ef --local --version 9.0.11

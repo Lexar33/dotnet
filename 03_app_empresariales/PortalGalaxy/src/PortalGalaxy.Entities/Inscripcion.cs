@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PortalGalaxy.Entities
 {
-    internal class Inscripcion : EntityBase
+    public class Inscripcion : EntityBase
     {
         public int AlumnoId { get; set; }
         public Alumno Alumno { get; set; } = null!;

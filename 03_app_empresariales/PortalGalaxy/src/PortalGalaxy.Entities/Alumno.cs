@@ -16,5 +16,8 @@ namespace PortalGalaxy.Entities
         public string Provincia { get; set; } = null!;
         public string Distrito { get; set; } = null!;
         public DateTime fechaInscripcion { get; set; }
+
+        // Crear propiedad de navegacion
+        public virtual HashSet<Inscripcion> Inscripciones { get; set; } = new();
     }
 }
