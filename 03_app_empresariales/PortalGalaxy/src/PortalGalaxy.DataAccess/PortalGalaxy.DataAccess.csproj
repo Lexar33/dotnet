@@ -13,7 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-	<ProjectReference Include="..\PortalGalaxy.Entities\PortalGalaxy.Common.csproj" />
+	<ProjectReference Include="..\PortalGalaxy.Common\PortalGalaxy.Common.csproj" />
     <ProjectReference Include="..\PortalGalaxy.Entities\PortalGalaxy.Entities.csproj" />
   </ItemGroup>
 
