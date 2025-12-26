@@ -4,4 +4,7 @@ public static class Constantes
 {
     public static readonly DateTime FechaCreacionDefault = new DateTime(2025, 12, 01);
 
+    public const string RolAdministrador = "Administrador";
+    public const string RolAlumno = "Alumno";
+    
 }

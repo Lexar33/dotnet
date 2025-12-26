@@ -4,7 +4,8 @@ using System.Reflection;
 
 namespace PortalGalaxy.DataAccess;
 //Aqui usamos primary constructor de c#12
-public class PortalGalaxyDbContext(DbContextOptions<PortalGalaxyDbContext> options): DbContext(options)
+public class PortalGalaxyDbContext(DbContextOptions<PortalGalaxyDbContext> options)
+    : DbContext(options)
 {
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -17,8 +18,6 @@ public class PortalGalaxyDbContext(DbContextOptions<PortalGalaxyDbContext> optio
         base.ConfigureConventions(configurationBuilder);
         configurationBuilder.Properties<string>()
             .HaveMaxLength(100);
-
         configurationBuilder.Conventions.Remove<SqlServerOnDeleteConvention>();
-
     }
 }
