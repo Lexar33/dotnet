@@ -9,7 +9,7 @@ namespace PortalGalaxy.Entities
     public class Instructor : EntityBase
     {
         public string NroDocumento { get; set; } = null!;
-        public string Nombre { get; set; } = null!;
+        public string Nombres { get; set; } = null!;
         public int CategoriaId { get; set; }
         public Categoria Categoria { get; set; } = null!;
     }

@@ -15,11 +15,13 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Scalar.AspNetCore" Version="2.11.10" />
+    <PackageReference Include="Scrutor" Version="7.0.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\PortalGalaxy.DataAccess\PortalGalaxy.DataAccess.csproj" />
     <ProjectReference Include="..\PortalGalaxy.Entities\PortalGalaxy.Entities.csproj" />
+    <ProjectReference Include="..\PortalGalaxy.Services\PortalGalaxy.Services.csproj" />
   </ItemGroup>
 
 </Project>

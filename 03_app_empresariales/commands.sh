@@ -21,6 +21,4 @@ dotnet dotnet-ef database update --project src/PortalGalaxy.DataAccess/PortalGal
 dotnet new tool-manifest
 dotnet tool install dotnet-ef --local --version 9.0.11
 
-
-
 #"Gemini the best ia of all the times because it helps a lot" - Base 64 encoding - Jwt Secret key

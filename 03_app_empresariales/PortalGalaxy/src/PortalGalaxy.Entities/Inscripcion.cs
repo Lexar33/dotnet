@@ -10,6 +10,7 @@ namespace PortalGalaxy.Entities
     {
         public int AlumnoId { get; set; }
         public Alumno Alumno { get; set; } = null!;
+        
         public int TallerId { get; set; }
         public Taller Taller { get; set; } = null!;
         
