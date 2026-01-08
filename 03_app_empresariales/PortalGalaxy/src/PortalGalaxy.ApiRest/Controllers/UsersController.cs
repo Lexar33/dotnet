@@ -26,5 +26,12 @@ namespace PortalGalaxy.ApiRest.Controllers
             _logger.LogInformation("Se inicio sesion desde {RequestID}", HttpContext.Connection.Id);
             return response.Success ? Ok(response): Unauthorized(response);
         }
+
+        [HttpPost]
+        public async Task<IActionResult> Register([FromBody] RegisterUserDto request) 
+        {
+            var response= await _service.RegisterAsync(request);
+            return response.Success ? Ok(response) : BadRequest(response);
+        }
     }
 }

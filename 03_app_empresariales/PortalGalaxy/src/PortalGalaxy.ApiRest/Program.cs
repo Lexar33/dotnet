@@ -6,7 +6,9 @@ using Microsoft.IdentityModel.Tokens;
 using PortalGalaxy.Common.Configuration;
 using PortalGalaxy.DataAccess;
 using PortalGalaxy.Entities;
+using PortalGalaxy.Repositories.Interfaces;
 using PortalGalaxy.Services.Interfaces;
+using PortalGalaxy.Services.Profiles;
 using Scalar.AspNetCore;
 using Scrutor;
 
@@ -26,8 +28,6 @@ builder.Services.AddCors(policy =>
 // Add services to the container.
 builder.Services.AddControllers();
 
-
-
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 
@@ -42,13 +42,19 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
         c => c.MigrationsHistoryTable("SecurityMigrations"));
 });
 
+//SCRUTOR: Siver para registrar las dependencias de forma automática
 builder.Services.Scan(s => s
-    .FromAssemblies(typeof(IUserService).Assembly)
+    .FromAssemblies(typeof(IUserService).Assembly,typeof(IAlumnoRepository).Assembly)
     .AddClasses(publicOnly:false)
     .UsingRegistrationStrategy(RegistrationStrategy.Skip)
     .AsMatchingInterface()
     .WithScopedLifetime()
 );
+
+builder.Services.AddAutoMapper(c =>
+{
+    c.AddMaps(typeof(TallerProfile).Assembly);
+});
 
 //Configuramos ASP.NET Identity Core
 builder.Services.AddIdentity<GalaxyIdentityUser, IdentityRole>(policies => {
@@ -58,7 +64,8 @@ builder.Services.AddIdentity<GalaxyIdentityUser, IdentityRole>(policies => {
     policies.Password.RequireLowercase = true;
     policies.Password.RequireNonAlphanumeric = false;
     policies.Password.RequireUppercase = false;
-
+    
+    //Esto hará que los usuarios no tengan correos repetidos
     policies.User.RequireUniqueEmail = true;
 
     //Politicas de bloqueo de cuentas
@@ -116,7 +123,7 @@ app.MapGet("/api/categorias", (PortalGalaxyDbContext context) =>
     return Results.Ok(categorias);
 });
 
-app.MapGet("/api/categoriass", (PortalGalaxyDbContext context) =>
+app.MapGet("/api/categoriassql", (PortalGalaxyDbContext context) =>
 {
     var connection = context.Database.GetDbConnection();
     connection.Open();

@@ -16,6 +16,12 @@ dotnet dotnet-ef migrations add InitialMigration --project src/PortalGalaxy.Data
 dotnet ef database update --project src/PortalGalaxy.DataAccess/PortalGalaxy.DataAccess.csproj --startup-project src/PortalGalaxy.ApiRest/PortalGalaxy.ApiRest.csproj 
 dotnet dotnet-ef migrations add InitialSecurityMIgration --project src/PortalGalaxy.DataAccess/PortalGalaxy.DataAccess.csproj --startup-project src/PortalGalaxy.ApiRest/PortalGalaxy.ApiRest.csproj  --context ApplicationDbContext
 dotnet dotnet-ef database update --project src/PortalGalaxy.DataAccess/PortalGalaxy.DataAccess.csproj --startup-project src/PortalGalaxy.ApiRest/PortalGalaxy.ApiRest.csproj  --context ApplicationDbContext
+dotnet ef migrations add InstructorCorrection --project src/PortalGalaxy.DataAccess/PortalGalaxy.DataAccess.csproj --startup-project src/PortalGalaxy.ApiRest/PortalGalaxy.ApiRest.csproj --context PortalGalaxyDbContext
+dotnet ef database update --project src/PortalGalaxy.DataAccess/PortalGalaxy.DataAccess.csproj --startup-project src/PortalGalaxy.ApiRest/PortalGalaxy.ApiRest.csproj 
+
+dotnet ef database update --project src/PortalGalaxy.DataAccess/PortalGalaxy.DataAccess.csproj --startup-project src/PortalGalaxy.ApiRest/PortalGalaxy.ApiRest.csproj --context PortalGalaxyDbContext
+
+
 
 #Manifiesto #paquetes locales
 dotnet new tool-manifest
