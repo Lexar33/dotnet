@@ -14,11 +14,19 @@
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "E:\\CODES\\dotnet\\01_fundamentos\\Fundamentos\\src\\sesion01\\sesion01.csproj",
       "projectName": "sesion01",
       "projectPath": "E:\\CODES\\dotnet\\01_fundamentos\\Fundamentos\\src\\sesion01\\sesion01.csproj",
       "packagesPath": "C:\\Users\\LEXAR\\.nuget\\packages\\",
       "outputPath": "E:\\CODES\\dotnet\\01_fundamentos\\Fundamentos\\src\\sesion01\\obj\\",
+=======
+      "projectUniqueName": "C:\\CODES\\dotnet\\01_fundamentos\\Fundamentos\\src\\sesion01\\sesion01.csproj",
+      "projectName": "sesion01",
+      "projectPath": "C:\\CODES\\dotnet\\01_fundamentos\\Fundamentos\\src\\sesion01\\sesion01.csproj",
+      "packagesPath": "C:\\Users\\jalcantarar\\.nuget\\packages\\",
+      "outputPath": "C:\\CODES\\dotnet\\01_fundamentos\\Fundamentos\\src\\sesion01\\obj\\",
+>>>>>>> d099bfa3f4f4e90c79fd3204c5ce52b079eea54d
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

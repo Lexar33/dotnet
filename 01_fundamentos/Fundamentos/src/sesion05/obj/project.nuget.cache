@@ -1,8 +1,14 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "wrb980Kn3Cg=",
   "success": true,
   "projectFilePath": "E:\\CODES\\dotnet\\01_fundamentos\\Fundamentos\\src\\sesion05\\sesion05.csproj",
+=======
+  "dgSpecHash": "JuJpBQ+HzB0=",
+  "success": true,
+  "projectFilePath": "C:\\CODES\\dotnet\\01_fundamentos\\Fundamentos\\src\\sesion05\\sesion05.csproj",
+>>>>>>> d099bfa3f4f4e90c79fd3204c5ce52b079eea54d
   "expectedPackageFiles": [],
   "logs": []
 }

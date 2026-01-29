@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 E:\CODES\dotnet\01_fundamentos\Fundamentos\src\sesion05\bin\Debug\net9.0\sesion05.exe
 E:\CODES\dotnet\01_fundamentos\Fundamentos\src\sesion05\bin\Debug\net9.0\sesion05.deps.json
 E:\CODES\dotnet\01_fundamentos\Fundamentos\src\sesion05\bin\Debug\net9.0\sesion05.runtimeconfig.json
@@ -13,3 +14,20 @@ E:\CODES\dotnet\01_fundamentos\Fundamentos\src\sesion05\obj\Debug\net9.0\refint\
 E:\CODES\dotnet\01_fundamentos\Fundamentos\src\sesion05\obj\Debug\net9.0\sesion05.pdb
 E:\CODES\dotnet\01_fundamentos\Fundamentos\src\sesion05\obj\Debug\net9.0\sesion05.genruntimeconfig.cache
 E:\CODES\dotnet\01_fundamentos\Fundamentos\src\sesion05\obj\Debug\net9.0\ref\sesion05.dll
+=======
+C:\CODES\dotnet\01_fundamentos\Fundamentos\src\sesion05\bin\Debug\net9.0\sesion05.exe
+C:\CODES\dotnet\01_fundamentos\Fundamentos\src\sesion05\bin\Debug\net9.0\sesion05.deps.json
+C:\CODES\dotnet\01_fundamentos\Fundamentos\src\sesion05\bin\Debug\net9.0\sesion05.runtimeconfig.json
+C:\CODES\dotnet\01_fundamentos\Fundamentos\src\sesion05\bin\Debug\net9.0\sesion05.dll
+C:\CODES\dotnet\01_fundamentos\Fundamentos\src\sesion05\bin\Debug\net9.0\sesion05.pdb
+C:\CODES\dotnet\01_fundamentos\Fundamentos\src\sesion05\obj\Debug\net9.0\sesion05.GeneratedMSBuildEditorConfig.editorconfig
+C:\CODES\dotnet\01_fundamentos\Fundamentos\src\sesion05\obj\Debug\net9.0\sesion05.AssemblyInfoInputs.cache
+C:\CODES\dotnet\01_fundamentos\Fundamentos\src\sesion05\obj\Debug\net9.0\sesion05.AssemblyInfo.cs
+C:\CODES\dotnet\01_fundamentos\Fundamentos\src\sesion05\obj\Debug\net9.0\sesion05.csproj.CoreCompileInputs.cache
+C:\CODES\dotnet\01_fundamentos\Fundamentos\src\sesion05\obj\Debug\net9.0\sesion05.sourcelink.json
+C:\CODES\dotnet\01_fundamentos\Fundamentos\src\sesion05\obj\Debug\net9.0\sesion05.dll
+C:\CODES\dotnet\01_fundamentos\Fundamentos\src\sesion05\obj\Debug\net9.0\refint\sesion05.dll
+C:\CODES\dotnet\01_fundamentos\Fundamentos\src\sesion05\obj\Debug\net9.0\sesion05.pdb
+C:\CODES\dotnet\01_fundamentos\Fundamentos\src\sesion05\obj\Debug\net9.0\sesion05.genruntimeconfig.cache
+C:\CODES\dotnet\01_fundamentos\Fundamentos\src\sesion05\obj\Debug\net9.0\ref\sesion05.dll
+>>>>>>> d099bfa3f4f4e90c79fd3204c5ce52b079eea54d
