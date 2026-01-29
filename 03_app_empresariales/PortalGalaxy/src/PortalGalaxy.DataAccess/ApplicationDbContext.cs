@@ -11,7 +11,7 @@ public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options
     {
         base.OnModelCreating(builder);
         
-        //Esto es Fliente API de EF Core
+        //Esto es Cliente API de EF Core
         builder.Entity<GalaxyIdentityUser>(e=> e.ToTable("Usuario")); //AspNetUser
         builder.Entity<IdentityRole>(e => e.ToTable("Rol")); // AspNetRoles
         builder.Entity<IdentityUserRole<string>>(e => e.ToTable("UsuarioRol")); //ApNetUserRoles

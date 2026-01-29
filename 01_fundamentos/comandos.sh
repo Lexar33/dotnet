@@ -21,3 +21,9 @@ dotnet new wpf --name MyWpfApp -lang "C#"
 ################################
 #PROYECTO WEBAPI
 dotnet new webapi -o PedidosApiRest
+################################
+dotnet --info
+dotnet new console --help
+dotnet run --project Sesion02
+dotnet add package Swashbuckle.AspNetCore.SwaggerUI
+dotnet add package Bogus

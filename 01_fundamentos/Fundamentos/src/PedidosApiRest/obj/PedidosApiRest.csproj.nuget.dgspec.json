@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\CODES\\dotnet\\01_fundamentos\\Fundamentos\\src\\PedidosApiRest\\PedidosApiRest.csproj": {}
+    "E:\\CODES\\dotnet\\01_fundamentos\\Fundamentos\\src\\PedidosApiRest\\PedidosApiRest.csproj": {}
   },
   "projects": {
-    "C:\\CODES\\dotnet\\01_fundamentos\\Fundamentos\\src\\PedidosApiRest\\PedidosApiRest.csproj": {
+    "E:\\CODES\\dotnet\\01_fundamentos\\Fundamentos\\src\\PedidosApiRest\\PedidosApiRest.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\CODES\\dotnet\\01_fundamentos\\Fundamentos\\src\\PedidosApiRest\\PedidosApiRest.csproj",
+        "projectUniqueName": "E:\\CODES\\dotnet\\01_fundamentos\\Fundamentos\\src\\PedidosApiRest\\PedidosApiRest.csproj",
         "projectName": "PedidosApiRest",
-        "projectPath": "C:\\CODES\\dotnet\\01_fundamentos\\Fundamentos\\src\\PedidosApiRest\\PedidosApiRest.csproj",
-        "packagesPath": "C:\\Users\\jalcantarar\\.nuget\\packages\\",
-        "outputPath": "C:\\CODES\\dotnet\\01_fundamentos\\Fundamentos\\src\\PedidosApiRest\\obj\\",
+        "projectPath": "E:\\CODES\\dotnet\\01_fundamentos\\Fundamentos\\src\\PedidosApiRest\\PedidosApiRest.csproj",
+        "packagesPath": "C:\\Users\\LEXAR\\.nuget\\packages\\",
+        "outputPath": "E:\\CODES\\dotnet\\01_fundamentos\\Fundamentos\\src\\PedidosApiRest\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\jalcantarar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\LEXAR\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -53,6 +53,10 @@
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[9.0.9, )"
+            },
+            "Swashbuckle.AspNetCore.SwaggerUI": {
+              "target": "Package",
+              "version": "[10.1.0, )"
             }
           },
           "imports": [
@@ -74,7 +78,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.307/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
